@@ -5,7 +5,7 @@
 /*-----------------------------------------------------------------------------------*/
 
 include('./dropplets/includes/feedwriter.php');
-include('./dropplets/includes/markdown.php');
+include('./dropplets/includes/markdown-geshi.php');
 include('./dropplets/includes/phpass.php');
 include('./dropplets/includes/actions.php');
 

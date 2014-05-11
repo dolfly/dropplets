@@ -1,19 +1,19 @@
 <?php
-
+define('BASEDIR',dirname(__FILE__));
 session_start();
 
 /*-----------------------------------------------------------------------------------*/
 /* If There's a Config Exists, Continue
 /*-----------------------------------------------------------------------------------*/
 
-if (file_exists('./config.php')) {
+if (file_exists(BASEDIR.'/config.php')) {
 
 /*-----------------------------------------------------------------------------------*/
 /* Get Settings & Functions
 /*-----------------------------------------------------------------------------------*/
 
-include('./dropplets/settings.php');
-include('./dropplets/functions.php');
+include(BASEDIR.'/dropplets/settings.php');
+include(BASEDIR.'/dropplets/functions.php');
 
 /*-----------------------------------------------------------------------------------*/
 /* Reading File Names

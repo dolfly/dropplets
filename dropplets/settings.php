@@ -1,5 +1,5 @@
 <?php 
-
+if(!defined('BASEDIR')) exit('no access');
 /*-----------------------------------------------------------------------------------*/
 /* Debug Mode
 /*-----------------------------------------------------------------------------------*/
@@ -13,14 +13,14 @@ ini_set('display_errors', $display_errors);
 /* Post Cache ('on' or 'off')
 /*-----------------------------------------------------------------------------------*/
 
-$post_cache = 'off';
-$index_cache = 'off';
+$post_cache = 'on';
+$index_cache = 'on';
 
 /*-----------------------------------------------------------------------------------*/
 /* Configuration & Options
 /*-----------------------------------------------------------------------------------*/
 
-include('./config.php');
+include(BASEDIR.'/config.php');
 
 // Definitions from the included configs above.
 define('BLOG_EMAIL', $blog_email);
@@ -50,7 +50,7 @@ setlocale(LC_ALL, '');
 /* Post Configuration
 /*-----------------------------------------------------------------------------------*/
 
-$pagination_on_off = "off"; //Infinite scroll by default?
+$pagination_on_off = "on"; //Infinite scroll by default?
 define('PAGINATION_ON_OFF', $pagination_on_off);
 
 $posts_per_page = 4;
@@ -59,14 +59,14 @@ define('POSTS_PER_PAGE', $posts_per_page);
 $infinite_scroll = "off"; //Infinite scroll works only if pagination is on.
 define('INFINITE_SCROLL', $infinite_scroll);
 
-$post_directory = './posts/';
-$cache_directory = './posts/cache/';
+$post_directory = BASEDIR.'/posts/';
+$cache_directory = BASEDIR.'/cache/posts/';
 
 if (glob($post_directory . '*.md') != false)
 {
-    $posts_dir = './posts/';
+    $posts_dir = BASEDIR.'/posts/';
 } else {
-    $posts_dir = './dropplets/welcome/';
+    $posts_dir = BASEDIR.'/posts/welcome/';
 }
 
 // Definitions from the settings above.
@@ -93,7 +93,7 @@ if (!file_exists(CACHE_DIR) && ($post_cache != 'off' || $index_cache != 'off')) 
 /*-----------------------------------------------------------------------------------*/
 
 // Get the active template directory.
-$template_dir = './templates/' . $template . '/';
+$template_dir = BASEDIR.'/templates/' . $template . '/';
 $template_dir_url = $blog_url . 'templates/' . $template . '/';
 
 // Get the active template files.

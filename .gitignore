@@ -12,6 +12,7 @@ posts/*.jpg
 
 templates/*
 !templates/simple/
+!templates/man/
 
 plugins/*
 !plugins/index.php
@@ -22,3 +23,7 @@ posts/*
 cache/*.png
 cache/*.jpeg
 cache/*.jpg
+cache/posts
+
+.idea
+
